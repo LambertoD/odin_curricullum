@@ -1,0 +1,50 @@
+body {
+	font: 80% arial, helvetica, sans-serif;
+	margin: 0 auto;
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	background-color: #efefef;
+	padding: 4px;
+	overflow: hidden;
+}
+li {
+	float: right;
+}
+a:link, a:visited {
+	display: block;
+	width: 110px;
+	line-height: 40px;
+	text-align: center;
+	vertical-align: middle;
+	padding: 4x;
+	text-decoration: none;
+}
+a:hover, a:active {
+	background-color: #7A991A;
+}
+#google_image {
+    text-align: center;
+    margin: 20px;
+}
+#search_entry{
+	text-align: center;
+	margin: 20px;
+}
+#search_for{
+	margin: 20px;
+	width: 50%;
+}
+
+#footer_links {
+	position: fixed;
+	bottom: 10px;
+	width: 100%;
+}
+
+#left_footer_span {
+	float: left;
+}
+
+
