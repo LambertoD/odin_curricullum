@@ -44,11 +44,12 @@ a:hover, a:active {
 #search_for{
 	margin: 20px;
 	width: 50%;
+	min-height: 25px;
 }
 
 #footer_links {
 	position: fixed;
-	bottom: 10px;
+	bottom: 1px;
 	width: 100%;
 	background-color: #efefef;
 }
@@ -59,6 +60,7 @@ a:hover, a:active {
 
 .submit_button {
 	color: #404040;
+	height: 30px;
 	text-shadow: 0px 1px 1px #ffffff;
 	border-bottom: 1px solid #b2b2b2;
 	border-radius: 2px;
