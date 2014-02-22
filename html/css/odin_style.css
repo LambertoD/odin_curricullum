@@ -18,11 +18,10 @@ li {
 a:link, a:visited {
 	display: block;
 	color: #404040;
-	width: 100px;
 	line-height: 40px;
 	text-align: center;
 	vertical-align: middle;
-	padding: 4x;
+	padding: 0px 20px 0px 20px;
 	text-decoration: none;
 }
 a:hover, a:active {
