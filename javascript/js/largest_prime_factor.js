@@ -19,4 +19,18 @@ function sieve(n)
   return prime_factors;
   
 }
-alert("answer: " + sieve(999999));
+
+var prime_factors = function() {
+  var input3 = document.getElementById("problem3_input");
+  var array_answer = document.getElementById("answer3_array");
+  var answer3 = document.getElementById("answer3");
+  var result = sieve(parseInt(input3.value));
+  array_answer.innerHTML = result;
+  var max = 0;
+  result.forEach(function(i) {
+      if(max < i) {
+        max = i;
+      }
+    });
+  answer3.innerHTML = max;
+};

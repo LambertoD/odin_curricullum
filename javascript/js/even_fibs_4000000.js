@@ -14,5 +14,9 @@ var fib_up_to = function (number) {
   return sum_of_evens;
 };
 
-var nums = fib_up_to(4000000);
-alert("sum is: " + nums);
+var sum_of_even_fibs = function() {
+  var input2 = document.getElementById("problem2_input");
+  var answer2 = document.getElementById("answer2");
+  var sum = fib_up_to(input2.value);
+  answer2.innerHTML = sum;
+};
