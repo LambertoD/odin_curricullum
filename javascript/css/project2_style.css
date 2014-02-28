@@ -1,0 +1,27 @@
+body {
+	font: 80% arial, helvetica, sans-serif;
+	margin: 10 auto;
+}
+h2 {
+    color: #6B4E3D;
+}
+.problem_content {
+    border-color: #DDDDDD #AAAAAA #AAAAAA #DDDDDD;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 110%;
+    padding: 10px;
+}
+
+button {
+	color: #404040;
+	height: 30px;
+	text-shadow: 0px 1px 1px #ffffff;
+	border-bottom: 1px solid #b2b2b2;
+	border-radius: 2px;
+}
+
+.output {
+	font-weight: bold;
+	text-decoration: underline;
+}
