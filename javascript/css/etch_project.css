@@ -1,0 +1,29 @@
+body {
+/*  font: 80% arial, helvetica, sans-serif;
+  margin: 0 auto;*/
+  text-align: center;
+}
+
+h1 {
+  font-family: "Courier New", monospace;
+  text-align: center;
+  display: block;
+  color: #6B4E3D;
+  font-size: 200%;
+  font-weight: bold;
+}
+.cell_row {
+  margin: -2px;
+}
+
+.box {
+  margin: -2px;
+  padding: 20px;
+  display: inline-block;  
+  background: #eee;
+  border: 1px solid #665544;
+}
+
+#grid16 {
+  margin-top: 20px;
+}
