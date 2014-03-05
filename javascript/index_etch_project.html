@@ -6,8 +6,23 @@
   <link rel="stylesheet" type="text/css" href="css/etch_project.css">
 </head>
 <body>
-<h1>TheOdinProject JQuery Etch a Sketch project</h1>
-<button id="clearGrid">Clear</button>
+<h1>TheOdinProject JQuery Etch-a-Sketch project</h1>
+<table id="choice_area">
+  <tr>
+    <td>
+      <p>Pick a color from the dropdown</p>
+      
+        <select name="color_selected" id="color_selected">
+          <option>Red</option>
+          <option>White</option>
+          <option>Blue</option>
+      </select>
+    </td>
+    <td>
+      <button id="clear_grid">Clear</button>
+    </td>
+  </tr>   
+</table>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="js/etch_project.js"></script>
 </body>

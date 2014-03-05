@@ -1,6 +1,6 @@
 body {
-/*  font: 80% arial, helvetica, sans-serif;
-  margin: 0 auto;*/
+  font: 80% arial, helvetica, sans-serif;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -26,4 +26,12 @@ h1 {
 
 #grid16 {
   margin-top: 20px;
+}
+
+#choice_area {
+  display: inline;
+}
+
+td {
+  padding: 10px;
 }

@@ -1,12 +1,20 @@
 $(function() {
-  createGrid16();
-  $("#clearGrid").on("click", function() {
+  var grid_color = $("#color_selected").prop("value");
+
+  $("#clear_grid").on("click", function() {
     $("span").css("background", "#eee");
   });
+
+  $("#color_selected").on("click", function() {
+    var grid_color = $("#color_selected").prop("value");
+  });
+
+  createGrid16(grid_color);
+
 });
 
 
-var createGrid16 = function() {
+var createGrid16 = function(grid_color) {
   var newContainer = $("<div />", { "id" : "grid16"});
   for (var i = 0; i < 16; i++) {
     var newDiv = $("<div />", {
@@ -20,6 +28,6 @@ var createGrid16 = function() {
   }
   newContainer.appendTo("body");
   $("span").on("mouseenter mouseleave", function() {
-    $(this).css("background", "red");
+    $(this).css("background", grid_color);
   });
 }
