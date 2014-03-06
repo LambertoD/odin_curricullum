@@ -1,14 +1,18 @@
 $(function() {
 
   $("#clear_grid").fadeOut("fast");
-  $("#clear_grid").on("click", function() {
-    $("span").css("background", "#eee");
-  });
 
   $("#generate_grid").on("click", function() {
     create_grid();
   });
 
+  $("#color_selected").on("click", function() {
+    update_grid();
+  })
+
+  $("#clear_grid").on("click", function() {
+    $("span").css("background", "#eee");
+  });
 });
 
 var create_grid = function() {
@@ -19,7 +23,11 @@ var create_grid = function() {
   var grid_size = $("#grid_size").prop("value");
   create_page_grid(grid_size, grid_color);
   $("#clear_grid").fadeIn("fast");
+}
 
+var update_grid = function() {
+  var grid_color = $("#color_selected").prop("value");
+  draw_on_grid(grid_color);
 }
 
 var create_page_grid = function(size, grid_color) {
@@ -43,8 +51,12 @@ var create_page_grid = function(size, grid_color) {
     newDiv.appendTo(newContainer);
   }
   newContainer.appendTo("body");
+  draw_on_grid(grid_color);
+}
+
+var draw_on_grid = function(color) {
   $("span").on("mouseenter mouseleave", function() {
-    $(this).css("background", grid_color);
+    $(this).css("background", color);
   });  
 
 }
