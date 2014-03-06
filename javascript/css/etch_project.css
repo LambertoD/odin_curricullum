@@ -1,7 +1,6 @@
 body {
   font: 80% arial, helvetica, sans-serif;
   margin: 0 auto;
-  width: 960px;
   text-align: center;
 }
 
@@ -13,25 +12,20 @@ h1 {
   font-weight: bold;
 }
 
-.cell_row {
-  
+#my_grid {
+  width: 960px;
 }
 
 .box {
   position: relative;
   left: 15%;
   float: left; 
-  /*display: inline-block;  */
   background: #eee;
   border: 1px solid #665544;
 }
 
-#my_grid {
-  /*border: 1px solid #665544;*/
-}
-
 #choice_area {
-  display: inline;
+  margin: auto;
 }
 
 td {
@@ -40,8 +34,4 @@ td {
 
 .clear {
   clear: left;
-}
-
-#clear_grid {
-  float: right;
 }

@@ -18,6 +18,7 @@ $(function() {
 var create_grid = function() {
   if($("#my_grid").hasClass("showing_in_page")) {
     $("#my_grid").remove();
+    $("#my_grid_heading").remove();
   }
   var grid_color = $("#color_selected").prop("value");
   var grid_size = $("#grid_size").prop("value");
@@ -31,32 +32,50 @@ var update_grid = function() {
 }
 
 var create_page_grid = function(size, grid_color) {
-  var side_value = 640 / size;
+  var my_grid_heading = $("<div />", { "id" : "my_grid_heading"});
+  $("<p>Your " + size + " x " + size + " Etch-A-Sketch Grid</p>").appendTo(my_grid_heading);  
+  $("<p>Start Drawing</p>").appendTo(my_grid_heading);
+  $("body").append(my_grid_heading);
+
+  var new_container = $("<div />", { "id" : "my_grid", 
+    "class": "showing_in_page"});
+  var side_value = 960 / size - 2;
   var side = side_value + "px"
-  var newContainer = $("<div />", { "id" : "my_grid", "class": "showing_in_page"});
-  $("<p>Your Etch-A-Sketch Grid</p>").appendTo(newContainer);  
-  $("<p>Start Drawing</p>").appendTo(newContainer);
   for (var i = 0; i < size; i++) {
-    var newDiv = $("<div />", {
+    var new_div = $("<div />", {
       "class": "cell_row",
       "class": "clear"
     });
     for (var j = 0; j < size; j++) {
-      var newSpan = $("<span />", {
+      $("<span />", {
         "class": "box",
         "height": side,
         "width" : side
-      }).appendTo(newDiv);    
+      }).appendTo(new_div);    
     };
-    newDiv.appendTo(newContainer);
+    new_div.appendTo(new_container);
   }
-  newContainer.appendTo("body");
+  new_container.appendTo("body");
   draw_on_grid(grid_color);
 }
 
 var draw_on_grid = function(color) {
-  $("span").on("mouseenter mouseleave", function() {
-    $(this).css("background", color);
+  $("span").on("mouseenter", function() {
+    // alert($(this).css("background"));
+    // if ($(this).css("background") === color) {
+    //  (this).css("background", "yellow"); 
+    // }
+    // $(this).css("background", color);
+    if(color === "Random") {
+      $(this).css("background", get_random_color());
+    }else {
+      $(this).css("background", color);
+    }
   });  
+}
 
+/* Thanks to Stack Overflow for random color function */
+var get_random_color = function() {
+  var r = function() { return Math.floor(Math.random()*256) };
+  return "rgb(" + r() + "," + r() + "," + r() + ")";
 }
