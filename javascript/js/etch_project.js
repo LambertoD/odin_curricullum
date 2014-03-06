@@ -13,7 +13,7 @@ $(function() {
 
 var create_grid = function() {
   if($("#my_grid").hasClass("showing_in_page")) {
-    $("#my_grid").empty();
+    $("#my_grid").remove();
   }
   var grid_color = $("#color_selected").prop("value");
   var grid_size = $("#grid_size").prop("value");
