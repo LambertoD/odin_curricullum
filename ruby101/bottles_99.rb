@@ -1,8 +1,9 @@
 require 'minitest/autorun'
+load 'english_number.rb'
 
 class Test99Bottles < Minitest::Unit::TestCase
   def setup
-    @bottles = Bottles.new
+    @bottles = Bottles.new(EnglishNumber.new)
     @test_verse = "99 bottles of beer on the wall, 99 bottles of beer \n Take one down, pass it around, 98 bottles of beer on the wall"
   end
   def test_1_verse
@@ -18,14 +19,18 @@ class Test99Bottles < Minitest::Unit::TestCase
 end
 
 class Bottles
+  attr_reader :english
+  def initialize english_numberer
+    @english = english_numberer
+  end
   def first_verse
     "99 bottles of beer on the wall, 99 bottles of beer \n Take one down, pass it around, 98 bottles of beer on the wall"
   end
   def verse(number)
     if number == 1
-      "#{number} bottle of beer on the wall, #{number} bottle of beer \n Take one down, pass it around, #{number-1} bottles of beer on the wall"    
+      "#{@english.english_number(number).capitalize} bottle of beer on the wall, #{@english.english_number(number)} bottle of beer \n Take one down, pass it around, #{@english.english_number(number-1)} bottles of beer on the wall"    
     else
-      "#{number} bottles of beer on the wall, #{number} bottles of beer \n Take one down, pass it around, #{number-1} bottles of beer on the wall"    
+      "#{@english.english_number(number).capitalize} bottles of beer on the wall, #{@english.english_number(number)} bottles of beer \n Take one down, pass it around, #{@english.english_number(number-1)} bottles of beer on the wall"    
     end  
   end
   def loop_verse(count)
