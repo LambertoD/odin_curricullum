@@ -1,0 +1,3 @@
+Fred Bloggs,Manager,Male,22
+Laura Smith,Cook,Female,22
+Debbie Walters,Professor,Female,38
