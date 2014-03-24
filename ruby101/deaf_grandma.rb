@@ -21,10 +21,16 @@ class Grandma
   end
   def talk_to_grandma
     puts "Here we go... let\'s talk to grandma \n Speak now..."
-    line = ''
-    while line != 'BYEBYEBYE'
+    exit_line, line = ''
+    while exit_line != 'BYEBYEBYE'
       line = gets.chomp
-      break if line == 'BYEBYEBYE'
+      if line.downcase == 'bye'
+        exit_line += line.upcase
+        puts exit_line
+      else
+         exit_line = ''
+      end
+      break if exit_line == 'BYEBYEBYE'
       if line == line.upcase
         puts "NO, NOT SINCE 19#{random_year}"
       else
