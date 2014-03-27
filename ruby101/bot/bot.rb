@@ -7,7 +7,7 @@ class Bot
   def initialize(options)
     @name = options[:name] || "Unnamed Bot"
     begin
-      @data = YAML.load(File.read(options[:data_file]))
+      @data = YAML.load(File.open(options[:data_file]).read)
     rescue 
       raise "Can't load bot data"
     end
@@ -54,13 +54,14 @@ class Bot
       responses = []
       @data[:responses].keys.each do |pattern|
         next unless pattern.is_a?(String)
-        if sentence.match('\b' + pattern.gsub(/\*/, '') + '\b')
-          if pattern.include?('*')
-            responses << @data[:responses][pattern].collect do |phrase|
-              matching_section = sentence.sub(/^.*#{pattern}\s+/, '')
-              phrase.sub('*', WordPlay.switch_pronouns(matching_section))
-            end
+
+        if pattern.include?('*')
+          responses << @data[:responses][pattern].collect do |phrase|
+            matching_section = sentence.sub(/^.*#{pattern}\s+/, '')
+            phrase.sub('*', WordPlay.switch_pronouns(matching_section))
           end
+        else
+          responses << @data[:responses][pattern]
         end
       end
       responses << @data[:responses][:default] if responses.empty?
